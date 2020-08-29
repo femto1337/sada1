@@ -7,6 +7,7 @@ import time
 from time import gmtime, strftime
 import re
 from telethon.sync import TelegramClient, events
+from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 
 act_band = [] 
 
@@ -17,11 +18,12 @@ band_browser = webdriver.Firefox(options=options1)
 band_browser.get("https://csgo.band/")
 time.sleep(1)
 
+profile = FirefoxProfile()
 options = webdriver.FirefoxOptions()
-options.add_extension('proxy.zip')
+profile.add_extension('proxy.zip')
 options.headless = True
 
-band1_browser = webdriver.Firefox(options=options)
+band1_browser = webdriver.Firefox(firefox_profile=profile,options=options)
 band1_browser.get("https://csgo.band/")
 input('После авторизации нажмите любую клавишу.')
 
