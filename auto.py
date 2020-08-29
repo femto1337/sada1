@@ -18,15 +18,6 @@ band_browser = webdriver.Firefox(options=options1)
 band_browser.get("https://csgo.band/")
 time.sleep(1)
 
-profile = FirefoxProfile()
-options = webdriver.FirefoxOptions()
-profile.add_extension('proxy.zip')
-options.headless = True
-
-band1_browser = webdriver.Firefox(firefox_profile=profile,options=options)
-band1_browser.get("https://csgo.band/")
-input('После авторизации нажмите любую клавишу.')
-
 def get_promo(promo, site):
     if site == 'run':
         promo = promo.replace('ран', '')
