@@ -10,11 +10,11 @@ from telethon.sync import TelegramClient, events
 
 act_band = [] 
 
-band_browser = webdriver.Chrome()
+band_browser = webdriver.Chrome('/usr/bin/chromedriver')
 band_browser.get("https://csgo.band/")
 time.sleep(1)
 
-options = webdriver.ChromeOptions()
+options = webdriver.ChromeOptions('/usr/bin/chromedriver')
 options.add_extension('proxy.zip')
 
 band1_browser = webdriver.Chrome(chrome_options=options)
