@@ -10,14 +10,18 @@ from telethon.sync import TelegramClient, events
 
 act_band = [] 
 
-band_browser = webdriver.Firefox()
+options1 = webdriver.FirefoxOptions()
+options1.headless = True
+
+band_browser = webdriver.Firefox(options=options1)
 band_browser.get("https://csgo.band/")
 time.sleep(1)
 
 options = webdriver.FirefoxOptions()
 options.add_extension('proxy.zip')
+options.headless = True
 
-band1_browser = webdriver.Firefox()
+band1_browser = webdriver.Firefox(options=options)
 band1_browser.get("https://csgo.band/")
 input('После авторизации нажмите любую клавишу.')
 
